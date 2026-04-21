@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    image: octobercms/october:latest
+    platform: linux/amd64
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: october
+      MYSQL_USER: october
+      MYSQL_PASSWORD: october
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

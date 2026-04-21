@@ -19,3 +19,10 @@ columns:
         label: Created
         type: datetime
         invisible: false
+    actions:
+        label: ''
+        type: partial
+        path: $/acme/leads/controllers/leads/_column_actions.php
+        searchable: false
+        sortable: false
+        clickable: false

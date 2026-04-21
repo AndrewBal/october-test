@@ -1,0 +1,33 @@
+<div id="leadFormWrapper">
+    <form
+        data-request="{{ __SELF__ }}::onSubmit"
+        data-request-flash
+        data-request-validate
+    >
+        <div class="form-group">
+            <label for="leadName">Name</label>
+            <input type="text" id="leadName" name="name" class="form-control" />
+            <span data-validate-for="name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="leadEmail">Email</label>
+            <input type="email" id="leadEmail" name="email" class="form-control" />
+            <span data-validate-for="email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="leadPhone">Phone</label>
+            <input type="text" id="leadPhone" name="phone" class="form-control" />
+            <span data-validate-for="phone" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="leadMessage">Message</label>
+            <textarea id="leadMessage" name="message" class="form-control" rows="4"></textarea>
+            <span data-validate-for="message" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>

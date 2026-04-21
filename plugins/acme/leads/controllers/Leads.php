@@ -3,6 +3,9 @@
 use BackendMenu;
 use Backend\Classes\Controller;
 
+use Flash;
+use Acme\Leads\Models\Lead;
+
 /**
  * Leads Backend Controller
  */
@@ -36,5 +39,26 @@ class Leads extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Acme.Leads', 'leads');
+    }
+
+
+    /**
+     * AJAX handler: mark a lead as contacted.
+     *
+     * Expects a `record_id` field from the list row. Updates the lead's
+     * status to "contacted", flashes a success message, and returns the
+     * re-rendered list so the row updates in place.
+     */
+    public function index_onMarkContacted(): array
+    {
+        $recordId = post('record_id');
+
+        $lead = Lead::findOrFail($recordId);
+        $lead->status = 'contacted';
+        $lead->save();
+
+        Flash::success(sprintf('Lead "%s" marked as contacted.', $lead->name));
+
+        return $this->listRefresh();
     }
 }

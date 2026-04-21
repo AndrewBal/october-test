@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: Name
+        searchable: true
+    email:
+        label: Email
+        searchable: true
+    phone:
+        label: Phone
+        searchable: true
+    status:
+        label: Status
+        type: selectable
+        options:
+            new: New
+            contacted: Contacted
+            closed: Closed
+    created_at:
+        label: Created
+        type: datetime
+        invisible: false

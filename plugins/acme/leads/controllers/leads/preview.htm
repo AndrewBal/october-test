@@ -1,0 +1,13 @@
+<?= Form::open(['class' => 'layout']) ?>
+
+    <div class="layout-row">
+        <?= $this->formRenderPreview() ?>
+    </div>
+
+    <div class="form-buttons">
+        <span class="btn-text">
+            <a href="<?= Backend::url('acme/leads/leads') ?>" class="btn btn-default">Return</a>
+        </span>
+    </div>
+
+<?= Form::close() ?>

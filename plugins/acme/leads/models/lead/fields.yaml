@@ -1,0 +1,39 @@
+fields:
+    name:
+        label: Name
+        type: text
+        span: left
+        required: true
+    email:
+        label: Email
+        type: text
+        span: right
+        required: true
+    phone:
+        label: Phone
+        type: text
+        span: left
+        required: true
+    status:
+        label: Status
+        type: dropdown
+        span: right
+        options: getStatusOptions
+    message:
+        label: Message
+        type: textarea
+        size: large
+        span: full
+        required: true
+    created_at:
+        label: Created
+        type: datepicker
+        mode: datetime
+        span: left
+        disabled: true
+    updated_at:
+        label: Updated
+        type: datepicker
+        mode: datetime
+        span: right
+        disabled: true

@@ -1,0 +1,16 @@
+name: Lead
+form: $/acme/leads/models/lead/fields.yaml
+modelClass: Acme\Leads\Models\Lead
+
+create:
+    title: New Lead
+    redirect: acme/leads/leads/update/:id
+    redirectClose: acme/leads/leads
+
+update:
+    title: Edit Lead
+    redirect: acme/leads/leads
+    redirectClose: acme/leads/leads
+
+preview:
+    title: Preview Lead

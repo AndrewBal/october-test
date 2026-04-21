@@ -1,0 +1,12 @@
+title: Leads
+modelClass: Acme\Leads\Models\Lead
+list: $/acme/leads/models/lead/columns.yaml
+recordUrl: acme/leads/leads/update/:id
+noRecordsMessage: No leads found
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: Find leads
+filter: $/acme/leads/models/lead/filter.yaml
